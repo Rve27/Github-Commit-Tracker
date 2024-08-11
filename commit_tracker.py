@@ -65,6 +65,7 @@ def track_commits(repo_owner, repo_name, bot_token=None, chat_id=None, github_to
                         author_name = latest_commit['commit']['author']['name']
                         author_login = latest_commit['author']['login'] if latest_commit.get('author') else None
                         author_profile_url = f"https://github.com/{author_login}" if author_login else "N/A"
+                        commit_url = f"https://github.com/{repo_owner}/{repo_name}/commit/{latest_commit['sha']}"
                         message = (
                             f"<b>New Commit detected</b>\n"
                             f"<b>------------------------</b>\n"
@@ -74,7 +75,7 @@ def track_commits(repo_owner, repo_name, bot_token=None, chat_id=None, github_to
                             f"<b>Branch :</b> <code>{branch}</code>\n"
                             f"\n"
                             f"<b>Commit : </b>\n"
-                            f"<code>{latest_commit['sha']}</code>\n"
+                            f"<a href='{commit_url}'>{latest_commit['sha']}</a>\n"
                             f"\n"
                             f"<b>Author :</b> <a href='{author_profile_url}'>{author_name}</a>\n"
                             f"\n"

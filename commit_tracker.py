@@ -7,7 +7,8 @@ def send_telegram_message(bot_token, chat_id, message):
         'chat_id': chat_id,
         'text': message,
         'parse_mode': 'HTML',
-        'disable_notification': True
+        'disable_notification': True,
+        'disable_web_page_preview': True
     }
     response = requests.post(url, data=payload)
     print(f"Response Status Code: {response.status_code}")

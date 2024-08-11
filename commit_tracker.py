@@ -64,7 +64,7 @@ def track_commits(repo_owner, repo_name, bot_token=None, chat_id=None, github_to
                             f"<b>New Commit detected</b>\n"
                             f"<b>------------------------</b>\n"
                             f"<b>Repository : </b> \n"
-                            f"<code>{repo_name}</code>\n"
+                            f"<a href='https://github.com/{repo_owner}/{repo_name}'>{repo_name}</a>\n"
                             f"\n"
                             f"<b>Branch :</b> <code>{branch}</code>\n"
                             f"\n"
